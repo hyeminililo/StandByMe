@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_sc/Model/common/client.dart';
 
+// 번역을 위한 api
 class Translation {
   final dio = Dio();
 

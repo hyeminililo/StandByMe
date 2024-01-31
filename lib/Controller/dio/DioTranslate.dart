@@ -2,19 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_sc/Model/common/client.dart';
 
-class Translation extends StatefulWidget {
-  const Translation({super.key});
-
-  @override
-  State<Translation> createState() => _TranslationState();
-}
-
-class _TranslationState extends State<Translation> {
+// 번역을 위한 api
+class Translation {
   final dio = Dio();
-  String translationResult = '';
 
-  Future<void> translatedText() async {
-    final response = await dio.post('https://openapi.naver.com/v1/papago/n2mt',
+  Future<String> translatedText() async {
+    String translationResult = '';
+    dynamic response = await dio.post(
+        'https://openapi.naver.com/v1/papago/n2mt',
         data: {
           'source': 'ko',
           'target': 'en',
@@ -29,13 +24,11 @@ class _TranslationState extends State<Translation> {
     if (response.statusCode == 200 || response.statusCode == 201) {
       final data = response.data;
       final translatedText = data['message']['result']['translatedText'];
-      setState(() {
-        translationResult = translatedText;
-      });
+      translationResult = translatedText;
     } else {
-      setState(() {
-        translationResult = '번역 실패 : ${response.statusCode}';
-      });
+      translationResult = '번역 실패 : ${response.statusCode}';
     }
+
+    return translationResult;
   }
 }
