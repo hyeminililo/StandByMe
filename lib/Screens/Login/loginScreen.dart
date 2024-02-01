@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sc/Model/common/color.dart';
@@ -16,11 +17,12 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   // 로그인 화면
   //final Auth authService = Auth();
-
+  Dio dio = Dio();
   final _formKey = GlobalKey<FormState>();
 
   GoogleAuth googleAuth = GoogleAuth();
   final String _id = '';
+  String email = '';
 
   final String _password = '';
   @override
@@ -60,8 +62,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                   style: TextStyle(color: MAIN_TEXT_COLOR),
                                 )),
                             TextButton(
-                              onPressed: () {
-                                googleAuth.signInWithGoogle();
+                              onPressed: () async {
+                                await googleAuth
+                                    .signInWithGoogle(); //회원가입여부 확인해서
+                                final String? userId =
+                                    FirebaseAuth.instance.currentUser?.uid;
+                                dio.get(
+                                    'http://localhost:8091/user/user$userId');
+                                //dio.post로 이메일을 여기서 날림
                               },
                               child: const Text("Google Log In",
                                   style: TextStyle(

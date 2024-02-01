@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_provider/flutter_provider.dart';
 
 class ApiConnector {
   final Dio _dio;
