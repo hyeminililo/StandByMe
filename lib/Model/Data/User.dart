@@ -1,7 +1,7 @@
 import 'package:flutter_sc/Screens/Login/joinScreen.dart';
-import 'package:flutter_sc/Controller//dio/app.dart';
+import 'package:flutter_sc/Controller/dio/LogIn/app.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../../Controller/dio/googleAuth.dart';
+import '../../Controller/dio/FireBase/googleAuth.dart';
 
 class Member1 {
   String? dropDownValueCountry;

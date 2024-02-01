@@ -13,15 +13,15 @@ class _EditMyPostScreenState extends State<EditMyPostScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarBase(title: 'editMyPost'),
-      bottomNavigationBar: TabBarBase(),
+      appBar: const AppBarBase(title: 'editMyPost'),
+      bottomNavigationBar: const TabBarBase(),
       body: ListView(
         children: [
           Column(
             children: [
-              Container(child: Text('A')),
-              Container(child: Text('B')),
-              Container(child: Text('C'))
+              Container(child: const Text('A')),
+              Container(child: const Text('B')),
+              Container(child: const Text('C'))
             ],
           )
         ],

@@ -4,7 +4,7 @@ import 'package:flutter_sc/Model/common/color.dart';
 import 'package:flutter_sc/Model/common/widget/textFormField.dart';
 import 'package:flutter_sc/Model/common/widget/TabBar.dart';
 import 'package:flutter_sc/Model/common/widget/appBar.dart';
-//import 'package:flutter_sc/Model/common/widget/appBar.dart';
+// import 'package:flutter_sc/Model/common/widget/appBar.dart';
 import 'package:go_router/go_router.dart';
 
 class CreatPostScreen extends StatefulWidget {
