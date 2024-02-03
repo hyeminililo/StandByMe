@@ -22,6 +22,7 @@ class GoogleAuth {
       );
 
       final firebaseAuth = FirebaseAuth.instance;
+      
       // Once signed in, return the UserCredential
       return await firebaseAuth.signInWithCredential(googleCredential);
     }
