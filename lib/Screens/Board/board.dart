@@ -20,6 +20,14 @@ class _boardScreenState extends State<boardScreen> {
             children: [Text('제목'), Text('$comment')],
           ),
           Row(
+            children: [
+              Text('좋아요'),
+              Text('$likely'),
+              Text('저장 수'),
+              Text('$comment')
+            ],
+          ),
+          Row(
             children: [Text('사진'), Text('$picture')],
           ),
         ],
