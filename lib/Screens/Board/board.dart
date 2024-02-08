@@ -17,19 +17,19 @@ class _boardScreenState extends State<boardScreen> {
       body: Column(
         children: [
           Row(
-            children: [Text('제목'), Text('$comment')],
-          ),
+              //      children: [Text('제목'), Text('$comment')],
+              ),
           Row(
             children: [
               Text('좋아요'),
-              Text('$likely'),
+              //  Text('$likely'),
               Text('저장 수'),
-              Text('$comment')
+              // Text('$comment')
             ],
           ),
           Row(
-            children: [Text('사진'), Text('$picture')],
-          ),
+              //     children: [Text('사진'), Text('$picture')],
+              ),
         ],
       ),
       bottomNavigationBar: TabBarBase(),

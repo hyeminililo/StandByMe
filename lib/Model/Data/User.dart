@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:dio/dio.dart';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class Member {
@@ -12,11 +13,19 @@ class Member {
     required this.email,
   });
 
-  factory Member.fromJson(Map<String, dynamic> json) {
+  Member toMap() {
     return Member(
-      id: json['id'] as int,
-      name: json['name'] as String,
-      email: json['email'] as String,
+      id: id,
+      name: name,
+      email: email,
+    );
+  }
+
+  factory Member.fromJson(Map<String, dynamic> map) {
+    return Member(
+      id: map['id'] as int,
+      name: map['name'] as String,
+      email: map['email'] as String,
     );
   }
 

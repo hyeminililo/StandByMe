@@ -20,9 +20,6 @@ Future<void> signOut() async {
     case LoginPlatform.none:
       break;
   }
-  /*setState(() {
-    _loginPlatform = LoginPlatform.none;
-  });*/
 }
 
 void googleSignOut() async {

@@ -65,11 +65,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                 await googleAuth
                                     .signInWithGoogle(); // 회원가입여부 확인해서
 
-                                final String? userId =
-                                    FirebaseAuth.instance.currentUser?.uid;
-                                dio.get(
-                                    'http://localhost:8091/user/user$userId');
-                                //dio.post로 이메일을 여기서 날림
+                                // final String? userId =
+                                //     FirebaseAuth.instance.currentUser?.uid;
+                                // dio.get(
+                                //     'http://localhost:8091/user/user$userId');
+                                // //dio.post로 이메일을 여기서 날림
                                 //        UserInfo
                               },
                               child: const Text("Google Log In",
