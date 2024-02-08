@@ -1,12 +1,35 @@
+import 'dart:convert';
+
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class Member {
-  String memberName ;
- // Role role ; // Role class가 필요한데, 이게 서버랑 통신을 했으면 바로 따로 role에 대한 클래스를 선언하지 않아도 되는지 궁금
-  String email;
-  String name;
-  String picture;
+  final int id;
+  final String name;
+  final String email;
 
-  Member(this.memberName,
-      //this.role,
-      this.email, this.name, this.picture);
+  Member({
+    required this.id,
+    required this.name,
+    required this.email,
+  });
 
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'name': name,
+      'email': email,
+    };
+  }
+
+  factory Member.fromMap(Map<String, dynamic> map) {
+    return Member(
+      id: map['id'] as int,
+      name: map['name'] as String,
+      email: map['email'] as String,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Member.fromJson(String source) =>
+      Member.fromMap(json.decode(source) as Map<String, dynamic>);
 }

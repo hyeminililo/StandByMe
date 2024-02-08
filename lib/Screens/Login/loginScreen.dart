@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   GoogleAuth googleAuth = GoogleAuth();
   final String _id = '';
- 
+
   final String _password = '';
   @override
   Widget build(BuildContext context) {
@@ -64,12 +64,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               onPressed: () async {
                                 await googleAuth
                                     .signInWithGoogle(); // 회원가입여부 확인해서
+
                                 final String? userId =
                                     FirebaseAuth.instance.currentUser?.uid;
                                 dio.get(
                                     'http://localhost:8091/user/user$userId');
                                 //dio.post로 이메일을 여기서 날림
-                        //        UserInfo 
+                                //        UserInfo
                               },
                               child: const Text("Google Log In",
                                   style: TextStyle(
