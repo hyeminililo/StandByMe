@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sc/Model/common/DropDown/Gender.dart';
-import 'package:flutter_sc/Model/Data/User.dart';
+import 'package:flutter_sc/Model/Data/UserInfo.dart';
 import 'package:go_router/go_router.dart';
 import '/Model/common/DropDown/country.dart';
 import '/Model/common/color.dart';
@@ -9,8 +9,7 @@ import '/Model/common/color.dart';
 class JoinScreen extends StatefulWidget {
   final Function(String, String)? onDropdownValueChanged;
 
-  const JoinScreen({Key? key, this.onDropdownValueChanged})
-      : super(key: key);
+  const JoinScreen({Key? key, this.onDropdownValueChanged}) : super(key: key);
 
   @override
   State<JoinScreen> createState() => _JoinScreenState();
@@ -73,9 +72,8 @@ class _JoinScreenState extends State<JoinScreen> {
                   widget.onDropdownValueChanged!(
                       dropdownValueCountry, dropdownValueGender);
                 },
-                disabledHint: Text('Gender'),
-                items:
-                    listGender.map<DropdownMenuItem<String>>((String value) {
+                disabledHint: const Text('Gender'),
+                items: listGender.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                       value: value, child: Text(value));
                 }).toList(),
@@ -90,7 +88,7 @@ class _JoinScreenState extends State<JoinScreen> {
                   if (form == null || !form.validate()) {
                     return;
                   }
-                //  Member member = Member(dropDownValueCountry:dropdownValueCountry, dropDownValueGender:dropdownValueGender);
+                  //  Member member = Member(dropDownValueCountry:dropdownValueCountry, dropDownValueGender:dropdownValueGender);
                   //widget.onDropdownValueChanged!(
                   //  member.dropDownValueCountry!,
                   //  member.dropDownValueGender!,

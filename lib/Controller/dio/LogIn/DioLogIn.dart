@@ -1,27 +1,30 @@
 import 'package:dio/dio.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_provider/flutter_provider.dart';
+import 'package:flutter_sc/Model/Data/TokenKey.dart';
+import 'package:flutter/material.dart';
 
-class ApiConnector {
+class DioLogin with ChangeNotifier {
+  bool isLoggedIn = false;
   final Dio _dio;
 
-  ApiConnector(this._dio);
+  String? acessToken;
+  String? refreshToken;
 
-// User 정보 얻는 함수..? -> 오류 제거를 위해 일단 void로 바꿈
-  Future<void> getUser() async {
-    try {
-      return _dio.get("http://localhost:8091/user/user").then((response) {
-        print(response.statusCode);
-        List<UserInfo> users = [];
-        for (var data in response.data) {
-          //   final user = User.fromJson(data);
-          //    user.add(user);
-        }
-        // return UserInfo;
-      });
-    } catch (e) {
-      print(e);
-      throw Exception();
-    }
+  DioLogin() : _dio = Dio();
+
+  void login() {
+    isLoggedIn = true;
+    notifyListeners();
+  }
+
+  void logout() {
+    isLoggedIn = false;
+    notifyListeners();
+  }
+
+  Future<void> refreshAccessToken() async {
+    final response = await _dio
+        .post('http://$ip/auth/regfresh', data: {'refreshToken': refreshToken});
+    final data = response.data;
+    acessToken = data['accessToken'];
   }
 }

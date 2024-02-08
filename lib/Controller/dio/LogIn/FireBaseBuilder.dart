@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_sc/Screens/Board/MainBoard.dart';
 //import 'package:flutter_sc/Screens/Login/homeScreen.dart';
 import 'package:flutter_sc/Screens/Login/joinScreen.dart';
 
@@ -16,7 +17,7 @@ class FireBaseAuth extends StatelessWidget {
           if (!user.hasData) {
             return const LoginScreen();
           } else {
-            return const JoinScreen();
+            return const MainBoardScreen();
           }
         });
   }
