@@ -12,24 +12,13 @@ class Member {
     required this.email,
   });
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'id': id,
-      'name': name,
-      'email': email,
-    };
-  }
-
-  factory Member.fromMap(Map<String, dynamic> map) {
+  factory Member.fromJson(Map<String, dynamic> json) {
     return Member(
-      id: map['id'] as int,
-      name: map['name'] as String,
-      email: map['email'] as String,
+      id: json['id'] as int,
+      name: json['name'] as String,
+      email: json['email'] as String,
     );
   }
 
   String toJson() => json.encode(toMap());
-
-  factory Member.fromJson(String source) =>
-      Member.fromMap(json.decode(source) as Map<String, dynamic>);
 }
