@@ -2,27 +2,27 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class User {
+class UserInfo {
   final int id;
   final String displayname;
   final String email;
 
-  User({
+  UserInfo({
     required this.id,
     required this.displayname,
     required this.email,
   });
 
-  User toMap() {
-    return User(
+  UserInfo toMap() {
+    return UserInfo(
       id: id,
       displayname: displayname,
       email: email,
     );
   }
 
-  factory User.fromJson(Map<String, dynamic> map) {
-    return User(
+  factory UserInfo.fromJson(Map<String, dynamic> map) {
+    return UserInfo(
       id: map['id'] as int,
       displayname: map['name'] as String,
       email: map['email'] as String,

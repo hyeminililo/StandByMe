@@ -80,8 +80,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   )),
                             ),
                             IconButton(
-                                onPressed: () {
-                                  googleAuth.handleSignIn(context);
+                                onPressed: () async {
+                                  await googleAuth.handleSignIn(context);
                                 },
                                 icon: Image.asset("assets/google.png",
                                     width: 40, height: 30
@@ -92,7 +92,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                   FirebaseAuth.instance.signOut();
                                 },
                                 child: const Text(' 로그아웃')),
-//로그아웃 일단 구현이 안 됨
                           ],
                         ),
                       ],

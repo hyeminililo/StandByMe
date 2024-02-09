@@ -38,6 +38,7 @@ class GoogleAuth {
       // User user = await fetchUser(token);
     } catch (E) {
       print(E);
+      print('여기가 오류야...');
       throw UnsupportedError('This function is not supported.');
     }
   }
