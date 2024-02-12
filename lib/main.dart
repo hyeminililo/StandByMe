@@ -1,10 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sc/Controller/Dio/FireBase/firebase_options.dart';
-import 'package:flutter_sc/Controller/Provider/UserInfoProvider.dart';
+import 'package:flutter_sc/Model/Provider/UserInfoProvider.dart';
 import 'package:flutter_sc/Model/common/color.dart';
-import 'package:flutter_sc/Screens/Board/MainBoard.dart';
-import 'package:flutter_sc/Screens/Login/loginScreen.dart';
 import 'package:provider/provider.dart';
 import 'Controller/Router/goRouter.dart';
 
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userInfoProvider = Provider.of<UserInfoProvider>(context);
+    //   final userInfoProvider = Provider.of<UserInfoProvider>(context);
 
     return MaterialApp.router(
       routerConfig: router,

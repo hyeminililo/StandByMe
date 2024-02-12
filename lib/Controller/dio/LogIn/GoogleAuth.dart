@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_sc/Controller/Dio/LogIn/User_Sign.dart';
-import 'package:flutter_sc/Controller/Provider/UserInfoProvider.dart';
+import 'package:flutter_sc/Controller/Dio/LogIn/FetchUser.dart';
+import 'package:flutter_sc/Model/Provider/UserInfoProvider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_sc/Model/Data/UserInfo.dart' as flutterUserInfo;
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart'; // UnsupportedError를 import 추가
 
 class GoogleAuth {
   // handleSign 메소드 : 구글 로그인 처리하고, 인증된 사용자 정보 가져와 firebase 인증 수행

@@ -32,6 +32,7 @@ migrate_working_dir/
 .pub/
 /build/
 /lib/Model/common/client.dart
+/lib/Model/Data/Url.dart
 
 # Symbolication related
 app.*.symbols
