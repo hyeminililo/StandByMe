@@ -1,6 +1,5 @@
 # flutter_sc
-
-A new Flutter project.
+플러터를 이용해 외국인 커뮤니티 프론트 구현 
 
 ## Getting Started
 
