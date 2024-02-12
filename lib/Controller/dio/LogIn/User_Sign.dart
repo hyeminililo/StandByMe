@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_sc/Controller/Provider/UserInfoProvider.dart';
 import 'package:flutter_sc/Model/Data/UserInfo.dart';
 import 'package:http/http.dart' as http;
 
@@ -13,9 +14,12 @@ Future<UserInfo> fetchUser(String token) async {
     Map<String, dynamic> json = jsonDecode(response.body);
     UserInfo member = UserInfo.fromJson(json);
     print('회원 정보 받아오기 성공');
+    UserInfoProvider userInfoProvider = UserInfoProvider();
+    userInfoProvider.userInfo = member;
+
     return member;
   } else {
-    throw Exception('Failed to fetch memer, 회원정보 받아오기 실패 ');
+    throw Exception('Failed to fetch memer, 회원 정보 받아오기 실패 ');
   }
 }
 

@@ -6,6 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_sc/Model/Data/UserInfo.dart' as flutterUserInfo;
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart'; // UnsupportedError를 import 추가
 
 class GoogleAuth {
   // handleSign 메소드 : 구글 로그인 처리하고, 인증된 사용자 정보 가져와 firebase 인증 수행
@@ -37,8 +38,10 @@ class GoogleAuth {
 
         // Provider를 이용해 인스턴스에 인증된 사용자 정보 설정
 
+        //     Provider.of<UserInfoProvider>(context, listen: false).userInfo =    userInfo;
         Provider.of<UserInfoProvider>(context, listen: false).userInfo =
             userInfo;
+
         GoRouter.of(context).go('mainBoard');
         return userInfo;
       }
@@ -49,7 +52,7 @@ class GoogleAuth {
       // User user = await fetchUser(token);
     } catch (E) {
       print('여기가 오류야...');
-      throw UnsupportedError('This function is not supported.');
+      throw Exception(E);
     }
   }
 }

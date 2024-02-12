@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_sc/Controller/Provider/UserInfoProvider.dart';
+import 'package:flutter_sc/Model/Data/UserInfo.dart';
 import 'package:flutter_sc/Model/common/color.dart';
 
 import '../../Model/common/widget/TabBar.dart';
@@ -13,47 +15,42 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  UserInfoProvider userInfoProvider = UserInfoProvider();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const AppBarBase(title: 'profile'),
         bottomNavigationBar: const TabBarBase(),
-        body: ListView(
-          children: [
-            Column(children: [
-              Column(
-                children: [
-                  const Icon(
-                    Icons.person_2_rounded,
-                    size: 150,
-                  ),
-                  padding,
-                  const Text(
-                    '$defaultFirebaseAppName',
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ],
-              ),padding,
-              const Row(children: [
-                Text(
-                  'E-mail : ',
-                  style: TextStyle(fontSize: 30),
-                ), Text('emial')
-              ]),
-              const Row(children: [
-                Text(
-                  'Country : ',
-                  style: TextStyle(fontSize: 30),
+        body: Center(
+          child: Column(children: [
+            Column(
+              children: [
+                const Icon(
+                  Icons.person_2_rounded,
+                  size: 150,
                 ),
-              ]),
-              const Row(children: [
+                padding,
                 Text(
-                  'Gender:  ',
-                  style: TextStyle(fontSize: 30),
+                  '${userInfoProvider.userInfo!.displayName}',
+                  style: const TextStyle(fontSize: 30),
                 ),
-              ]),
+              ],
+            ),
+            padding,
+            Row(children: [
+              const Text(
+                'E-mail :',
+                style: TextStyle(fontSize: 25),
+              ),
+              Text(
+                ' ${userInfoProvider.userInfo!.email}',
+                style: const TextStyle(fontSize: 20),
+              )
             ]),
-          ],
+            const SizedBox(
+              height: 30,
+            ),
+          ]),
         ));
   }
 }

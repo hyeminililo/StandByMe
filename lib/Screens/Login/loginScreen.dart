@@ -1,11 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sc/Controller/Dio/LogIn/User_Sign.dart';
 import 'package:flutter_sc/Model/common/color.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_sc/Controller/Dio/LogIn/GoogleAuth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -23,9 +21,9 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
   GoogleAuth googleAuth = GoogleAuth();
-  final String _id = '';
+  // final String _id = '';
 
-  final String _password = '';
+//  final String _password = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,10 +73,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   )),
                             ),
                             IconButton(
-                                onPressed: () async {
-                                  await googleAuth.handleSignIn(context);
-                                },
-                                icon: Image.asset("assets/googlloe.png",
+                                onPressed: () async =>
+                                    await googleAuth.handleSignIn(context),
+                                icon: Image.asset("assets/google.png",
                                     width: 40, height: 30
                                     //  child:linkWell(borderRad),
                                     )),
