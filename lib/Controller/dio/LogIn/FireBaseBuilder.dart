@@ -15,9 +15,9 @@ class FireBaseAuth extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (BuildContext context, AsyncSnapshot<User?> user) {
           if (!user.hasData) {
-            return const LoginScreen();
-          } else {
             return const MainBoardScreen();
+          } else {
+            return const LoginScreen();
           }
         });
   }

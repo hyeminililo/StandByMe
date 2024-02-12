@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_sc/Controller/Dio/LogIn/User_Sign.dart';
 import 'package:flutter_sc/Model/common/color.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_sc/Controller/Dio/LogIn/GoogleAuth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -63,15 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             TextButton(
                               onPressed: () async {
                                 await googleAuth.handleSignIn(context);
-                                //  await googleAuth
-                                //       .signInWithGoogle(); // 회원가입여부 확인해서
 
-                                // final String? userId =
-                                //     FirebaseAuth.instance.currentUser?.uid;
-                                // dio.get(
-                                //     'http://localhost:8091/user/user$userId');
-                                // //dio.post로 이메일을 여기서 날림
-                                //        UserInfo
+                                context.go('/mainBoard');
                               },
                               child: const Text("Google Log In",
                                   style: TextStyle(
@@ -83,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 onPressed: () async {
                                   await googleAuth.handleSignIn(context);
                                 },
-                                icon: Image.asset("assets/google.png",
+                                icon: Image.asset("assets/googlloe.png",
                                     width: 40, height: 30
                                     //  child:linkWell(borderRad),
                                     )),
