@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sc/Model/common/color.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_sc/Controller/Dio/LogIn/GoogleAuth.dart';
+import 'package:flutter_sc/Controller/Dto/LogIn/GoogleAuth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

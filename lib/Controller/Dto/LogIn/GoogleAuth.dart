@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_sc/Controller/Dio/LogIn/FetchUser.dart';
+import 'package:flutter_sc/Controller/Dto/LogIn/FetchUser.dart';
 import 'package:flutter_sc/Model/Provider/UserInfoProvider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -30,7 +30,15 @@ class GoogleAuth {
             accessToken: googleSignInAuth.accessToken,
             idToken: googleSignInAuth.idToken);
 
+        // Create a new credential으로 accessToken과 idToken 을 저장 (credential에)
+//       final AuthCredential googleCredential = GoogleAuthProvider.credential(
+//         accessToken: googleAuth.accessToken,
+//         idToken: googleAuth.idToken,
+//       );
         final firebaseAuth = FirebaseAuth.instance;
+        print(googleCredential.accessToken);
+        print('dddd');
+        print(googleSignInAuth.accessToken);
         // firebase 에 대한 인증을 수행하고 성공적으로 인증되면 userCredential 반환 => 이 부분을 바꿔야 할듯?
         flutterUserInfo.UserInfo userInfo =
             await fetchUser(googleSignInAuth.accessToken!);
@@ -41,7 +49,7 @@ class GoogleAuth {
         Provider.of<UserInfoProvider>(context, listen: false).userInfo =
             userInfo;
 
-        GoRouter.of(context).go('mainBoard');
+        GoRouter.of(context).go('/mainBoard');
         return userInfo;
       }
       throw Exception("Google Sign-in failed");
@@ -51,6 +59,7 @@ class GoogleAuth {
       // User user = await fetchUser(token);
     } catch (E) {
       print('여기가 오류야...');
+
       throw Exception(E);
     }
   }

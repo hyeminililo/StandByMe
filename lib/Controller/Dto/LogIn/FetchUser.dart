@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 Future<UserInfo> fetchUser(String token) async {
   final response = await http
       .get(Uri.parse(USER_INFO_URL), headers: {'Authorization': token});
+  print(response.statusCode);
 
   if (response.statusCode == 200 || response.statusCode == 201) {
     Map<String, dynamic> json = jsonDecode(response.body);

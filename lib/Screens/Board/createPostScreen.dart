@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sc/Model/Provider/BoardProvider.dart';
 import 'package:flutter_sc/Model/common/DropDown/country.dart';
 import 'package:flutter_sc/Model/common/color.dart';
 import 'package:flutter_sc/Model/common/widget/textFormField.dart';
@@ -6,6 +7,8 @@ import 'package:flutter_sc/Model/common/widget/TabBar.dart';
 import 'package:flutter_sc/Model/common/widget/appBar.dart';
 // import 'package:flutter_sc/Model/common/widget/appBar.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_sc/Model/Data/Board/BoardModel.dart';
+import 'package:provider/provider.dart';
 
 class CreatPostScreen extends StatefulWidget {
   final Function(String, String)? onDropdownValueChanged;
@@ -23,9 +26,14 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
   TFF tffTitle = TFF(textFormField: TextFormField(), cnc: 'Title');
   TFF tffPost = TFF(textFormField: TextFormField(), cnc: 'Writing...');
   String dropdownValueLocal = listLocal.first;
-
+  final BoardModel _boardModel = BoardModel();
   @override
   Widget build(BuildContext context) {
+    BoardProvider boardProvider =
+        Provider.of<BoardProvider>(context, listen: false); // 지역 선택된 값 보여주기
+    BoardModel newBoardModel =
+        BoardModel(title: tffTitle.toString(), contents: tffPost.toString());
+
     return Scaffold(
       appBar: const AppBarBase(title: 'creatPost'),
       body: SingleChildScrollView(
@@ -46,8 +54,11 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
                                     content: const Text('Post?'),
                                     actions: [
                                       TextButton(
-                                          onPressed: () =>
-                                              context.go('mainBoard'),
+                                          onPressed: () async => {
+                                                context.go('/mainBoard'),
+                                                boardProvider.updateBoardModel(
+                                                    newBoardModel)
+                                              },
                                           child: const Text('Sumbit')),
                                       TextButton(
                                           onPressed: () => context.pop(),
