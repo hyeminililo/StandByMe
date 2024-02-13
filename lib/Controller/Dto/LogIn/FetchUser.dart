@@ -4,13 +4,18 @@ import 'package:flutter_sc/Model/Provider/UserInfoProvider.dart';
 import 'package:flutter_sc/Model/Data/Url.dart';
 import 'package:flutter_sc/Model/Data/UserInfo.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
-// 서버엫서 로그인 정보를 가져오는 함수
-Future<UserInfo> fetchUser(String token) async {
-  final response = await http
-      .get(Uri.parse(USER_INFO_URL), headers: {'Authorization': token});
+// 서버서 로그인 정보를 가져오는 함수
+Future<UserInfo> fetchUser() async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  final String token = prefs.getString('accessToken') ?? '';
+
+  print('token: $token');
+
+  final dynamic response = await http.get(Uri.parse(USER_INFO_URL),
+      headers: {'Authorization': 'Bearer $token'});
   print(response.statusCode);
-
   if (response.statusCode == 200 || response.statusCode == 201) {
     Map<String, dynamic> json = jsonDecode(response.body);
     UserInfo member = UserInfo.fromJson(json);

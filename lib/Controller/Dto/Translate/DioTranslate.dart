@@ -17,8 +17,8 @@ class Translation {
         },
         options: Options(headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-          'X-Naver-Client-Id': CLIENT_ID,
-          'X-Naver-Client-Secret': CLIENT_SECRET,
+          'X-Naver-Client-Id': TRANSLATE_CLIENT_ID,
+          'X-Naver-Client-Secret': TRANSLATE_CLIENT_SECRET,
         }));
 
     if (response.statusCode == 200 || response.statusCode == 201) {
