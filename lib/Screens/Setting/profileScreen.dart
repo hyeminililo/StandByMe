@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sc/Model/Provider/UserInfoProvider.dart';
-import 'package:flutter_sc/Model/Data/UserInfo.dart';
 import 'package:flutter_sc/Model/common/color.dart';
 
 import '../../Model/common/widget/TabBar.dart';

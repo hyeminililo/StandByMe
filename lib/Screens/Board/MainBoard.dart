@@ -17,23 +17,17 @@ class _MainBoardScreenState extends State<MainBoardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarBase(title: 'Board'),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              const Padding(padding: EdgeInsets.fromLTRB(20, 0, 0, 0)),
-              const Text(
-                'Free Board',
-                style: TextStyle(fontSize: 20),
-              ),
-              const SizedBox(width: 180),
-              TextButton(
-                  onPressed: () => context.go('/creatPost'),
-                  child: const Text('+ Creat Post'))
-            ],
-          ),
-        ],
-      ),
+      body: ListView.separated(
+          itemBuilder: (context, index) {
+            return const ListTile(
+              title: Text(items[index].title),
+              onTap: () {},
+            );
+          },
+          separatorBuilder: (context, index) {
+            return const Divider();
+          },
+          itemCount: items.length),
       bottomNavigationBar: const TabBarBase(),
     );
   }

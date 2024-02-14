@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sc/Model/Data/Board/MainBoardDB.dart';
 import 'package:flutter_sc/Model/Provider/BoardProvider.dart';
 import 'package:flutter_sc/Model/common/DropDown/country.dart';
 import 'package:flutter_sc/Model/common/color.dart';
@@ -33,7 +34,7 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
         Provider.of<BoardProvider>(context, listen: false); // 지역 선택된 값 보여주기
     BoardModel newBoardModel =
         BoardModel(title: tffTitle.toString(), contents: tffPost.toString());
-
+    BoardDetailsDB db = BoardDetailsDB();
     return Scaffold(
       appBar: const AppBarBase(title: 'creatPost'),
       body: SingleChildScrollView(
@@ -57,7 +58,11 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
                                           onPressed: () async => {
                                                 context.go('/mainBoard'),
                                                 boardProvider.updateBoardModel(
-                                                    newBoardModel)
+                                                    newBoardModel),
+                                                db.saveBoardDb(
+                                                    tffTitle.toString(),
+                                                    tffPost.toString(),
+                                                    dropdownValueLocal)
                                               },
                                           child: const Text('Sumbit')),
                                       TextButton(
