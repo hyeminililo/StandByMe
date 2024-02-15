@@ -13,21 +13,26 @@ class MainBoardScreen extends StatefulWidget {
 }
 
 class _MainBoardScreenState extends State<MainBoardScreen> {
+  List<String> posts = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarBase(title: 'Board'),
       body: ListView.separated(
           itemBuilder: (context, index) {
-            return const ListTile(
-              title: Text(items[index].title),
-              onTap: () {},
-            );
+            return const ListTile(title: Text(posts[index]), onTap: () {});
           },
           separatorBuilder: (context, index) {
             return const Divider();
           },
-          itemCount: items.length),
+          itemCount: posts.length //items.length
+          ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          context.go('/createBoard');
+        },
+        child: const Icon(Icons.screenshot_rounded),
+      ),
       bottomNavigationBar: const TabBarBase(),
     );
   }

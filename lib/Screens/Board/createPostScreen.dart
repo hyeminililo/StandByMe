@@ -27,13 +27,14 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
   TFF tffTitle = TFF(textFormField: TextFormField(), cnc: 'Title');
   TFF tffPost = TFF(textFormField: TextFormField(), cnc: 'Writing...');
   String dropdownValueLocal = listLocal.first;
-  final BoardModel _boardModel = BoardModel();
   @override
   Widget build(BuildContext context) {
     BoardProvider boardProvider =
         Provider.of<BoardProvider>(context, listen: false); // 지역 선택된 값 보여주기
-    BoardModel newBoardModel =
-        BoardModel(title: tffTitle.toString(), contents: tffPost.toString());
+    BoardModel newBoardModel = BoardModel(
+        title: tffTitle.toString(),
+        contents: tffPost.toString(),
+        location: dropdownValueLocal);
     BoardDetailsDB db = BoardDetailsDB();
     return Scaffold(
       appBar: const AppBarBase(title: 'creatPost'),

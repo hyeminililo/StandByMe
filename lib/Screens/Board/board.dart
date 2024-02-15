@@ -17,7 +17,9 @@ class _boardScreenState extends State<boardScreen> {
       body: Column(
         children: [
           Row(
-            children: [Text('제목'), Text('$titleLarge')],
+            children: [
+              Text('제목'), //Text('$titleLarge')
+            ],
           ),
           Row(
             children: [

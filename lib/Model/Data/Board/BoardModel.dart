@@ -1,32 +1,31 @@
 import 'dart:convert';
 
+//listView에 띄우는 것
 class BoardModel {
-  int? _boardId;
-  String? _contents;
-  String? _title;
-  String? _location;
+  late int? boardId;
+  late String? contents;
+  late String? title;
+  late String? location;
 
-  BoardModel({int? boardId, String? title, String? contents, String? location})
-      : _boardId = boardId,
-        _title = title,
-        _contents = contents,
-        _location = location;
+  BoardModel(
+      {this.boardId,
+      required this.contents,
+      required this.title,
+      required this.location});
 
-  BoardModel toMap() {
-    return BoardModel(
-        boardId: _boardId,
-        contents: _contents,
-        title: _title,
-        location: _location);
+  Map<String, dynamic> toMap() {
+    return {
+      'id': boardId,
+      'title': title,
+      'contents': contents,
+      'region': location,
+    };
   }
 
-  factory BoardModel.fromJson(Map<String, dynamic> map) {
-    return BoardModel(
-        boardId: map['boardId'] as int,
-        contents: map['contents'] as String,
-        title: map['title'] as String,
-        location: map['region'] as String);
+  BoardModel.fromMap(Map<dynamic, dynamic>? map) {
+    boardId = map?['boardId'];
+    title = map?['title'];
+    contents = map?['contents'];
+    location = map?['region'];
   }
-
-  String toJson() => json.encode(toMap());
 }
