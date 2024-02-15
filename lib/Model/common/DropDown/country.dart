@@ -196,16 +196,17 @@ List<String> listCountry = <String>[
   'Zambia',
   'Zimbabwe'
 ];
-List<String> listLocal = <String>[
-  'Seoul',
-  'InCheon',
-  'KyungGi-do',
-  'ChungCheong-do',
-  'DaeJeon',
-  'KangWon-do',
-  'JeolLa-do',
-  'GyeongSang-do',
-  'DaeGu',
-  'UlSan',
-  'JeJu Island'
-];
+
+Map<String, String> maplocal = <String, String>{
+  'Seoul': 'Seoul',
+  'InCheon': 'InCheon',
+  'KyungGi-do': 'KyungGi-do',
+  'ChungCheong-do': 'ChungCheong-do',
+  'DaeJeon': 'DaeJeon',
+  'KangWon-do': 'KangWon-do',
+  'JeolLa-do': 'JeolLa-do',
+  'GyeongSang-do': 'GyeongSang-do',
+  'DaeGu': 'DaeGu',
+  'UlSan': 'UlSan',
+  'JeJu Island': 'JeJu Island'
+};

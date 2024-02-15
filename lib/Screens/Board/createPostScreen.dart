@@ -26,7 +26,7 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
   final _formKey = GlobalKey<FormState>();
   TFF tffTitle = TFF(textFormField: TextFormField(), cnc: 'Title');
   TFF tffPost = TFF(textFormField: TextFormField(), cnc: 'Writing...');
-  String dropdownValueLocal = listLocal.first;
+  String dropdownValueLocal = maplocal.keys.first;
   @override
   Widget build(BuildContext context) {
     BoardProvider boardProvider =
@@ -97,24 +97,32 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
                           setState(() {
                             dropdownValueLocal = value!;
                           });
-                          widget.onDropdownValueChanged!(
-                              dropdownValueLocal, dropdownValueLocal);
+                          //  widget.onDropdownValueChanged!(
+                          //    dropdownValueLocal, dropdownValueLocal);
                         },
-                        items: listLocal
-                            .map<DropdownMenuItem<String>>((String value) {
+                        selectedItemBuilder: (BuildContext context) {
+                          return maplocal.values.map<Widget>((String item) {
+                            return Container(
+                              alignment: Alignment.centerLeft,
+                              constraints: const BoxConstraints(minWidth: 100),
+                              child: Text(
+                                item,
+                                style: const TextStyle(
+                                  color: PRIMARYCOLOR,
+                                ),
+                              ),
+                            );
+                          }).toList();
+                        },
+                        items: maplocal.keys
+                            .map<DropdownMenuItem<String>>((String item) {
                           return DropdownMenuItem<String>(
-                              value: value, child: Text(value));
+                              value: item, child: Text(item));
                         }).toList(),
                       ),
                       const Padding(
                         padding: EdgeInsets.fromLTRB(150, 0, 0, 0),
                       ),
-                      // 사진 업로드 delete
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.camera_alt),
-                        iconSize: 45,
-                      )
                     ],
                   ),
                   // 글쓰기

@@ -4,8 +4,6 @@ import 'dart:convert';
 
 //DB에 게시판 작성 데이터 저장하는 함수
 class BoardDetailsDB {
-  Future initDB() async {}
-
   Future<http.Response> saveBoardDb(
       String title, String contents, String location) async {
     Map<String, String> headers = {"Content-Type": "application/json"};
