@@ -19,8 +19,11 @@ class AppBarBase extends StatelessWidget implements PreferredSizeWidget {
             title: const Text('STAND BY ME'),
             actions: [
               const AppBarSearchButton(),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.alarm)),
-              IconButton(onPressed: ()=>context.go('/profile'), icon: const Icon(Icons.person))
+              IconButton(
+                  onPressed: () {}, icon: const Icon(Icons.alarm)), //delete
+              IconButton(
+                  onPressed: () => context.go('/profile'),
+                  icon: const Icon(Icons.person))
             ],
           );
         },

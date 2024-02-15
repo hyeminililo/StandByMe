@@ -37,8 +37,12 @@ class _TabBarBaseState extends State<TabBarBase>
     return MotionTabBar(
         controller: _motionTabBarController,
         initialSelectedTab: "Board",
-        labels: const ["Chat", "Board", "Setting"],
-        icons: const [Icons.chat, Icons.home, Icons.settings],
+        labels: const ["Chat", "Board", "Setting"], // **chat-> profile로 바꾸기
+        icons: const [
+          Icons.chat,
+          Icons.home,
+          Icons.settings
+        ], // chat-> 을 profile
 
         // ignore: prefer_const_literals_to_create_immutables
         badges: [
@@ -79,12 +83,11 @@ class _TabBarBaseState extends State<TabBarBase>
           setState(() {
             // _tabController!.index = value;
             _motionTabBarController!.index = value;
-
           });
           switch (value) {
             case 0:
               {
-                context.go('chat');
+                context.go('chat'); // profile로 바꾸기
                 break;
               }
             case 1:

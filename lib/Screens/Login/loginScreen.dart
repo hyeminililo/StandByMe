@@ -63,7 +63,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             TextButton(
                               onPressed: () async {
                                 await googleAuth.handleSignIn(context);
-
                                 context.go('/mainBoard');
                               },
                               child: const Text("Google Log In",
@@ -79,6 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     width: 40, height: 30
                                     //  child:linkWell(borderRad),
                                     )),
+                            //delete
                             TextButton(
                                 onPressed: () {
                                   FirebaseAuth.instance.signOut();

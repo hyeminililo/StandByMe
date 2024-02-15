@@ -109,7 +109,7 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
                       const Padding(
                         padding: EdgeInsets.fromLTRB(150, 0, 0, 0),
                       ),
-                      // 사진 업로드
+                      // 사진 업로드 delete
                       IconButton(
                         onPressed: () {},
                         icon: const Icon(Icons.camera_alt),
