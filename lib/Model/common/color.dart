@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const PRIMARYCOLOR = Color.fromARGB(255, 174, 226, 229); // 민트
+const PRIMARYCOLOR = Color.fromRGBO(179, 226, 228, 1); // 민트
 
 const MAIN_TEXT_COLOR = Color(0xFFFFFFFF); // 화이트
 

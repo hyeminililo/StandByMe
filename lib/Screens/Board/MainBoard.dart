@@ -20,7 +20,9 @@ class _MainBoardScreenState extends State<MainBoardScreen> {
       appBar: const AppBarBase(title: 'Board'),
       body: ListView.separated(
           itemBuilder: (context, index) {
-            return const ListTile(title: Text(posts[index]), onTap: () {});
+            return null;
+
+            //     return const ListTile(title: Text(posts[index]), onTap: () {});
           },
           separatorBuilder: (context, index) {
             return const Divider();

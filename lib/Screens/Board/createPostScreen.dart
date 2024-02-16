@@ -24,18 +24,22 @@ class CreatPostScreen extends StatefulWidget {
 //formkey로 받은 것들이 한 번에 넘어갈 수 있는지 ex) 하나의 정보 게시팜 모델테이블에 넣어서 담아갈 수 있는?ㅇ
 class _CreatPostScreenState extends State<CreatPostScreen> {
   final _formKey = GlobalKey<FormState>();
+
+  // textFormField를 통해 받은 값들
   TFF tffTitle = TFF(textFormField: TextFormField(), cnc: 'Title');
   TFF tffPost = TFF(textFormField: TextFormField(), cnc: 'Writing...');
   String dropdownValueLocal = maplocal.keys.first;
+
   @override
   Widget build(BuildContext context) {
     BoardProvider boardProvider =
         Provider.of<BoardProvider>(context, listen: false); // 지역 선택된 값 보여주기
-    BoardModel newBoardModel = BoardModel(
+
+    BoardDetailsDB db = BoardDetailsDB(
         title: tffTitle.toString(),
         contents: tffPost.toString(),
         location: dropdownValueLocal);
-    BoardDetailsDB db = BoardDetailsDB();
+
     return Scaffold(
       appBar: const AppBarBase(title: 'creatPost'),
       body: SingleChildScrollView(
@@ -58,12 +62,10 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
                                       TextButton(
                                           onPressed: () async => {
                                                 context.go('/mainBoard'),
-                                                boardProvider.updateBoardModel(
-                                                    newBoardModel),
-                                                db.saveBoardDb(
-                                                    tffTitle.toString(),
-                                                    tffPost.toString(),
-                                                    dropdownValueLocal)
+                                                //          db.saveBoardDb(
+                                                tffTitle.toString(),
+                                                tffPost.toString(),
+                                                //            dropdownValueLocal)
                                               },
                                           child: const Text('Sumbit')),
                                       TextButton(
@@ -97,8 +99,6 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
                           setState(() {
                             dropdownValueLocal = value!;
                           });
-                          //  widget.onDropdownValueChanged!(
-                          //    dropdownValueLocal, dropdownValueLocal);
                         },
                         selectedItemBuilder: (BuildContext context) {
                           return maplocal.values.map<Widget>((String item) {

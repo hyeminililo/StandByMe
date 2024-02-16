@@ -4,17 +4,17 @@ import 'package:flutter_sc/Model/Data/Url.dart';
 import 'package:http/http.dart' as http;
 
 // 서버에서 받기
-Future<List<BoardModel>> fetchBoard() async {
-  final response = await http.post(Uri.parse(BOARD_CREATE_URL));
-  if (response.statusCode == 200 || response.statusCode == 201) {
-    dynamic responseJson = jsonDecode(response.body);
-    BoardModel boardModel = BoardModel.fromJson(responseJson);
-    print('board data success');
-    return (responseJson as List).map((p) => BoardModel.fromJson(p)).toList();
-  } else {
-    throw Exception('Failed to load server data');
-  }
-}
+// Future<List<BoardModel>> fetchBoard() async {
+//   final response = await http.post(Uri.parse(BOARD_CREATE_URL));
+//   if (response.statusCode == 200 || response.statusCode == 201) {
+//     dynamic responseJson = jsonDecode(response.body);
+//     //  BoardModel boardModel = BoardModel.fromJson(responseJson);
+//     print('board data success');
+//     //   return (responseJson as List).map((p) => BoardModel.fromJson(p)).toList();
+//   } else {
+//     throw Exception('Failed to load server data');
+//   }
+// }
 
 //서버에 데이터 보내기
 Future<void> sendToData() async {

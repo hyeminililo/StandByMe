@@ -51,15 +51,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               TextStyle(fontSize: 25, color: MAIN_TEXT_COLOR),
                         ),
                         padding,
+                        padding,
+                        padding,
                         Column(
                           children: [
                             // createWith를 누르면 goRouter로 구글 로그인으로 바로 이동하게 구현하기 (구글로그인으로 이동한 후에 joindㅡ로 닉네임 값만  받기 )
-                            TextButton(
-                                onPressed: () => context.go('/join'),
-                                child: const Text(
-                                  'Create with',
-                                  style: TextStyle(color: MAIN_TEXT_COLOR),
-                                )),
+
                             TextButton(
                               onPressed: () async {
                                 await googleAuth.handleSignIn(context);
@@ -67,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                               child: const Text("Google Log In",
                                   style: TextStyle(
-                                    fontSize: 17,
+                                    fontSize: 20,
                                     color: Colors.black,
                                   )),
                             ),
@@ -75,15 +72,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 onPressed: () async =>
                                     await googleAuth.handleSignIn(context),
                                 icon: Image.asset("assets/google.png",
-                                    width: 40, height: 30
+                                    width: 60, height: 40
                                     //  child:linkWell(borderRad),
                                     )),
                             //delete
-                            TextButton(
-                                onPressed: () {
-                                  FirebaseAuth.instance.signOut();
-                                },
-                                child: const Text(' 로그아웃')),
                           ],
                         ),
                       ],

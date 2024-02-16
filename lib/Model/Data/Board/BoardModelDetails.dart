@@ -1,27 +1,28 @@
 import 'dart:convert';
+import 'dart:ffi';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class BoardModelDetails {
-  final int? _boardId;
+  final Long? _boardId;
   final String? _contents;
   final String? _title;
   final String? _location;
   final String? _writer;
-  final dynamic _createdDate;
-  final int? _theNumberOfReply;
+  final DateTime _createdDate;
+  final Long? _theNumberOfReply;
   final int? _viewCount;
-  final int? _heartsCount;
+  final Long? _heartsCount;
 
   BoardModelDetails(
-      {int? boardId,
+      {Long? boardId,
       String? contents,
       String? title,
       String? location,
       String? writer,
       dynamic createdDate,
-      int? theNumberOfReply,
+      Long? theNumberOfReply,
       int? viewCount,
-      int? heartsCount})
+      Long? heartsCount})
       : _boardId = boardId,
         _contents = contents,
         _title = title,
@@ -47,15 +48,15 @@ class BoardModelDetails {
 
   factory BoardModelDetails.fromMap(Map<String, dynamic> map) {
     return BoardModelDetails(
-      boardId: map['_boardId'] as int,
+      boardId: map['_boardId'] as Long,
       contents: map['_contents'] as String,
       title: map['_title'] as String,
       location: map['_region'] as String,
       writer: map['_writer'] as String,
       createdDate: map['_createdDate'] as dynamic,
-      theNumberOfReply: map['_theNumberOfReply'] as int,
+      theNumberOfReply: map['_theNumberOfReply'] as Long,
       viewCount: map['_view'] as int,
-      heartsCount: map['_hearts'] as int,
+      heartsCount: map['_hearts'] as Long,
     );
   }
 
