@@ -43,9 +43,12 @@ class BoardDetailsDB {
 
 // DB에 있는 데이터를 리스트로 가져오는 함수
   Future<List<dynamic>> fetchPost() async {
-    http.Response res = await http.get(Uri.parse(BOARD_FETCH_URL));
-    if (res.statusCode == 200 || res.statusCode == 201) {
-      List<dynamic> body = jsonDecode(res.body);
+    http.Response response = await http.get(Uri.parse(BOARD_FETCH_URL));
+    print('Response stauts : ${response.statusCode}');
+    print('Response body : ${response.body}');
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      List<dynamic> body = jsonDecode(response.body);
       return body;
     } else {
       throw "Unable to retrieve posts.";
@@ -55,6 +58,9 @@ class BoardDetailsDB {
 // DB에 있는 데이터를 가져오는 함수
   Future<BoardDetailsDB> fetchBoardDB() async {
     final response = await http.get(Uri.parse(BOARD_FETCH_URL));
+    print('Response stauts : ${response.statusCode}');
+    print('Response body : ${response.body}');
+
     if (response.statusCode == 200 || response.statusCode == 201) {
       return BoardDetailsDB.fromJson(jsonDecode(response.body));
     } else {

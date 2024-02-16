@@ -14,13 +14,21 @@ class MainBoardScreen extends StatefulWidget {
 }
 
 class _MainBoardScreenState extends State<MainBoardScreen> {
+  late Future<List<dynamic>> boardDetailsDb;
   final BoardDetailsDB boardDetailsDB = BoardDetailsDB();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    boardDetailsDb = boardDetailsDB.fetchPost();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarBase(title: 'Board'),
       body: FutureBuilder(
-        future: boardDetailsDB.fetchPost(),
+        future: boardDetailsDb,
         builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
           if (snapshot.hasData) {
             List<dynamic> posts = snapshot.data!;
@@ -43,7 +51,7 @@ class _MainBoardScreenState extends State<MainBoardScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.go('/createBoard');
+          context.go('/createPost');
         },
         child: const Icon(Icons.screenshot_rounded),
       ),
