@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sc/Controller/Dto/Board/DioBoard.dart';
 import 'package:flutter_sc/Model/Data/Board/MainBoardDB.dart';
 import 'package:flutter_sc/Model/Provider/BoardProvider.dart';
 import 'package:flutter_sc/Model/common/DropDown/country.dart';
@@ -32,8 +33,8 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
 
   @override
   Widget build(BuildContext context) {
-    BoardProvider boardProvider =
-        Provider.of<BoardProvider>(context, listen: false); // 지역 선택된 값 보여주기
+    // BoardProvider boardProvider =
+    //     Provider.of<BoardProvider>(context, listen: false); // 지역 선택된 값 보여주기
 
     BoardDetailsDB db = BoardDetailsDB(
         title: tffTitle.toString(),
@@ -61,11 +62,11 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
                                     actions: [
                                       TextButton(
                                           onPressed: () async => {
-                                                context.go('/mainBoard'),
-                                                //          db.saveBoardDb(
-                                                tffTitle.toString(),
-                                                tffPost.toString(),
-                                                //            dropdownValueLocal)
+                                                db.saveBoardDB(
+                                                    tffTitle.toString(),
+                                                    tffPost.toString(),
+                                                    dropdownValueLocal),
+                                                context.go('/mainBoard')
                                               },
                                           child: const Text('Sumbit')),
                                       TextButton(
