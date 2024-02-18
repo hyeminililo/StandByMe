@@ -59,7 +59,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
                             TextButton(
                               onPressed: () async {
+                                //      await googleAuth.signInWithGoogle();
                                 await googleAuth.handleSignIn(context);
+
                                 context.go('/mainBoard');
                               },
                               child: const Text("Google Log In",
@@ -70,6 +72,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             IconButton(
                                 onPressed: () async =>
+                                    //   await googleAuth.signInWithGoogle(),
+
                                     await googleAuth.handleSignIn(context),
                                 icon: Image.asset("assets/google.png",
                                     width: 60, height: 40

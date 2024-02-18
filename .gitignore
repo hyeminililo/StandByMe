@@ -33,6 +33,7 @@ migrate_working_dir/
 /build/
 /lib/Model/common/client.dart
 /lib/Model/Data/Url.dart
+/lib/firebase_options.dart
 
 
 # Symbolication related

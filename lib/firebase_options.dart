@@ -67,10 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '273613810149',
     projectId: 'standbyme-5d856',
     storageBucket: 'standbyme-5d856.appspot.com',
-    androidClientId:
-        '273613810149-era956oju327nilbpcaqu59eaim91uga.apps.googleusercontent.com',
-    iosClientId:
-        '273613810149-feiaqkpc2d37qmftaebsdhaq796siok8.apps.googleusercontent.com',
+    androidClientId: '273613810149-era956oju327nilbpcaqu59eaim91uga.apps.googleusercontent.com',
+    iosClientId: '273613810149-feiaqkpc2d37qmftaebsdhaq796siok8.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterSc',
   );
 
@@ -80,10 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '273613810149',
     projectId: 'standbyme-5d856',
     storageBucket: 'standbyme-5d856.appspot.com',
-    androidClientId:
-        '273613810149-era956oju327nilbpcaqu59eaim91uga.apps.googleusercontent.com',
-    iosClientId:
-        '273613810149-e2um5421dap5h7eui46ao1aepchj2flp.apps.googleusercontent.com',
+    androidClientId: '273613810149-era956oju327nilbpcaqu59eaim91uga.apps.googleusercontent.com',
+    iosClientId: '273613810149-e2um5421dap5h7eui46ao1aepchj2flp.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterSc.RunnerTests',
   );
 }
