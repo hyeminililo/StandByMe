@@ -2,10 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_sc/Model/Data/UserInfo.dart';
 
 class UserInfoProvider with ChangeNotifier {
-  UserInfo? _userInfo;
-  UserInfo? get userInfo => _userInfo;
+  UserInfoDB? _userInfo;
+  UserInfoDB? get userInfo => _userInfo;
 
-  set userInfo(UserInfo? userInfo) {
+  set userInfo(UserInfoDB? userInfo) {
     _userInfo = userInfo;
     notifyListeners();
   }

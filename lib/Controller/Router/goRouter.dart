@@ -1,3 +1,4 @@
+import 'package:flutter_sc/ExampleMainBoard/ExampleMainboard.dart';
 import 'package:flutter_sc/Screens/Board/MainBoard.dart';
 import 'package:flutter_sc/Screens/Board/createPostScreen.dart';
 import 'package:flutter_sc/Screens/Login/joinScreen.dart';

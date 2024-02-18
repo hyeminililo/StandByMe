@@ -3,15 +3,15 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-class UserInfo extends ChangeNotifier {
+class UserInfoDB extends ChangeNotifier {
   int? _id;
   String? _displayName;
   String? _email;
 
-  UserInfo({
-    required int? id,
-    required String? displayName,
-    required String? email,
+  UserInfoDB({
+    int? id,
+    String? displayName,
+    String? email,
   })  : _id = id,
         _displayName = displayName,
         _email = email;
@@ -34,16 +34,16 @@ class UserInfo extends ChangeNotifier {
     notifyListeners();
   }
 
-  UserInfo toMap() {
-    return UserInfo(
+  UserInfoDB toMap() {
+    return UserInfoDB(
       id: _id,
       displayName: _displayName,
       email: _email,
     );
   }
 
-  factory UserInfo.fromJson(Map<String, dynamic> map) {
-    return UserInfo(
+  factory UserInfoDB.fromJson(Map<String, dynamic> map) {
+    return UserInfoDB(
       id: map['id'] as int?,
       displayName: map['name'] as String?,
       email: map['email'] as String?,

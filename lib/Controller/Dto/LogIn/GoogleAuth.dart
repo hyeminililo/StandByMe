@@ -5,7 +5,7 @@ import 'package:flutter_sc/Controller/Dto/LogIn/FetchUser.dart';
 import 'package:flutter_sc/Model/Data/TokenKey.dart';
 import 'package:flutter_sc/Model/common/client.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:flutter_sc/Model/Data/UserInfo.dart' as flutterUserInfo;
+import 'package:flutter_sc/Model/Data/UserInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -16,7 +16,7 @@ class GoogleAuth {
   Future<dynamic> handleSignIn(BuildContext context) async {
     // 구글 로그인 관리할 클래스 clientId: GOOGLE_CLIENT_ID
     final GoogleSignIn googleSignIn = GoogleSignIn(clientId: GOOGLE_CLIENT_ID);
-
+    final UserDto userDto = UserDto();
     //UserInfo userInfo = UserInfo.fromJson(googleSignIn.);
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
@@ -52,7 +52,7 @@ class GoogleAuth {
       });
       print(googleSignInAuth.accessToken);
 
-      flutterUserInfo.UserInfo userInfo = await fetchUser();
+      UserInfoDB userInfo = await userDto.fetchUser();
 // GoRouter.of(context).go('/mainBoard');
       return userInfo;
       //flutterUserInfo.UserInfo
