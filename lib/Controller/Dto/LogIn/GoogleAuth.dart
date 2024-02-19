@@ -5,7 +5,7 @@ import 'package:flutter_sc/Controller/Dto/LogIn/FetchUser.dart';
 import 'package:flutter_sc/Model/Data/TokenKey.dart';
 import 'package:flutter_sc/Model/common/client.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:flutter_sc/Model/Data/UserInfo.dart';
+import 'package:flutter_sc/Model/Data/UserInfo/UserInfoDB.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

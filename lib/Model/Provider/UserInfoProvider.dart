@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_sc/Model/Data/UserInfo.dart';
+import 'package:flutter_sc/Model/Data/UserInfo/UserInfoDB.dart';
 
 class UserInfoProvider with ChangeNotifier {
   UserInfoDB? _userInfo;

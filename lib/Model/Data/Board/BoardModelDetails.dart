@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:ffi';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class BoardModelDetails {
+class BoardcreteDB {
   final Long? _boardId;
   final String? _contents;
   final String? _title;
@@ -13,7 +13,7 @@ class BoardModelDetails {
   final int? _viewCount;
   final Long? _heartsCount;
 
-  BoardModelDetails(
+  BoardcreteDB(
       {Long? boardId,
       String? contents,
       String? title,
@@ -33,8 +33,8 @@ class BoardModelDetails {
         _viewCount = viewCount,
         _heartsCount = heartsCount;
 
-  BoardModelDetails toMap() {
-    return BoardModelDetails(
+  BoardcreteDB toMap() {
+    return BoardcreteDB(
         boardId: _boardId,
         contents: _contents,
         title: _title,
@@ -46,8 +46,8 @@ class BoardModelDetails {
         heartsCount: _heartsCount);
   }
 
-  factory BoardModelDetails.fromMap(Map<String, dynamic> map) {
-    return BoardModelDetails(
+  factory BoardcreteDB.fromMap(Map<String, dynamic> map) {
+    return BoardcreteDB(
       boardId: map['_boardId'] as Long,
       contents: map['_contents'] as String,
       title: map['_title'] as String,
@@ -62,6 +62,6 @@ class BoardModelDetails {
 
   String toJson() => json.encode(toMap());
 
-  factory BoardModelDetails.fromJson(String source) =>
-      BoardModelDetails.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory BoardcreteDB.fromJson(String source) =>
+      BoardcreteDB.fromMap(json.decode(source) as Map<String, dynamic>);
 }

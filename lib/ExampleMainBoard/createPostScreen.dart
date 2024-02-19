@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sc/Controller/Dto/Board/DioBoard.dart';
 import 'package:flutter_sc/ExampleMainBoard/ExampleMainboard.dart';
 import 'package:flutter_sc/ExampleMainBoard/MainBoardModel.dart';
-import 'package:flutter_sc/Model/Data/Board/MainBoardDB.dart';
+import 'package:flutter_sc/Model/Data/Board/BoardCreateDB.dart';
 import 'package:flutter_sc/Model/Provider/BoardProvider.dart';
 import 'package:flutter_sc/Model/common/DropDown/country.dart';
 import 'package:flutter_sc/Model/common/color.dart';

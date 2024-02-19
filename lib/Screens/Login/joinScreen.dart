@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sc/Model/common/DropDown/Gender.dart';
-import 'package:flutter_sc/Model/Data/UserInfo.dart';
+import 'package:flutter_sc/Model/Data/UserInfo/UserInfoDB.dart';
 import 'package:go_router/go_router.dart';
 import '/Model/common/DropDown/country.dart';
 import '/Model/common/color.dart';

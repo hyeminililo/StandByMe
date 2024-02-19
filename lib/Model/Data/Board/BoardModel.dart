@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-//listView에 띄우는 것
+//listView에 띄우는 것 ->서버에서 받을 때 
 class BoardModel {
   late int? boardId;
   late String? contents;

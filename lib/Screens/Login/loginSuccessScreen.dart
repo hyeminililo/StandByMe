@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sc/Controller/Dto/LogIn/FetchUser.dart';
 import 'package:flutter_sc/Model/common/color.dart';
 import 'package:go_router/go_router.dart';
 
@@ -10,6 +11,7 @@ class LoginSuccessScreen extends StatefulWidget {
 }
 
 class _LoginSuccessScreenState extends State<LoginSuccessScreen> {
+  UserDto userDto = UserDto();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +36,11 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen> {
                   backgroundColor: MAIN_TEXT_COLOR,
                   shadowColor: SHADOW_TEXT_COLOR,
                   minimumSize: const Size(250, 50)),
-              onPressed: () => context.go('/login'), //바로 홈으로
+              onPressed: () => {
+                userDto.getLoginList(),
+                print('userinfo: ${userDto.getLoginList()}'),
+                print('userinfoToString: ${userDto.getLoginList().toString()}')
+              }, //바로 홈으로
               child: const Text(
                 'Log in',
                 style: TextStyle(color: Colors.black),

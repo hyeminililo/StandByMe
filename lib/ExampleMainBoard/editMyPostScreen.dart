@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sc/Model/common/widget/TabBar.dart';
 import 'package:flutter_sc/Model/common/widget/appbar.dart';
 
-class EditMyPostScreen extends StatefulWidget {
-  const EditMyPostScreen({super.key});
+class ExampleEditMyPostScreen extends StatefulWidget {
+  const ExampleEditMyPostScreen({super.key});
 
   @override
-  State<EditMyPostScreen> createState() => _EditMyPostScreenState();
+  State<ExampleEditMyPostScreen> createState() =>
+      _ExampleEditMyPostScreenState();
 }
 
-class _EditMyPostScreenState extends State<EditMyPostScreen> {
+class _ExampleEditMyPostScreenState extends State<ExampleEditMyPostScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

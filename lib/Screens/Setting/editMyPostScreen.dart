@@ -16,13 +16,9 @@ class _EditMyPostScreenState extends State<EditMyPostScreen> {
       appBar: const AppBarBase(title: 'editMyPost'),
       bottomNavigationBar: const TabBarBase(),
       body: ListView(
-        children: [
+        children: const [
           Column(
-            children: [
-              Container(child: const Text('A')),
-              Container(child: const Text('B')),
-              Container(child: const Text('C'))
-            ],
+            children: [Text('내 글 조회 : ')],
           )
         ],
       ),

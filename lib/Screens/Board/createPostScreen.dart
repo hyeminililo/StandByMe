@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sc/Controller/Dto/Board/DioBoard.dart';
-import 'package:flutter_sc/Model/Data/Board/MainBoardDB.dart';
+import 'package:flutter_sc/Model/Data/Board/BoardCreateDB.dart';
 import 'package:flutter_sc/Model/Provider/BoardProvider.dart';
 import 'package:flutter_sc/Model/common/DropDown/country.dart';
 import 'package:flutter_sc/Model/common/color.dart';
@@ -36,7 +36,7 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
     // BoardProvider boardProvider =
     //     Provider.of<BoardProvider>(context, listen: false); // 지역 선택된 값 보여주기
 
-    BoardDetailsDB db = BoardDetailsDB(
+    BoardCreateDB db = BoardCreateDB(
         title: tffTitle.toString(),
         contents: tffPost.toString(),
         location: dropdownValueLocal);

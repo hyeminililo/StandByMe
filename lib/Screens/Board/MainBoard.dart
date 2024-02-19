@@ -15,7 +15,7 @@ class MainBoardScreen extends StatefulWidget {
 
 class _MainBoardScreenState extends State<MainBoardScreen> {
   late Future<List<dynamic>> boardDetailsDb;
-  final BoardDetailsDB boardDetailsDB = BoardDetailsDB();
+  final BoardCreateDB boardDetailsDB = BoardCreateDB();
   @override
   void initState() {
     // TODO: implement initState
@@ -51,7 +51,7 @@ class _MainBoardScreenState extends State<MainBoardScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.go('/createPost');
+          context.go('/creatPost');
         },
         child: const Icon(Icons.screenshot_rounded),
       ),

@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_sc/Controller/Dto/LogIn/FetchUser.dart';
+import 'package:flutter_sc/Model/Data/UserInfo/UserInfoDB.dart';
 import 'package:flutter_sc/Model/Provider/UserInfoProvider.dart';
 import 'package:flutter_sc/Model/common/color.dart';
 
@@ -15,6 +19,9 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   UserInfoProvider userInfoProvider = UserInfoProvider();
+  UserDto userDto = UserDto();
+  UserInfoDB userInfoDB = UserInfoDB();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,21 +37,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 padding,
                 Text(
-                  '${userInfoProvider.userInfo!.displayName}',
+                  '${userInfoDB.displayName}',
                   style: const TextStyle(fontSize: 30),
                 ),
               ],
             ),
             padding,
             Row(children: [
-              const Text(
-                'E-mail :',
-                style: TextStyle(fontSize: 25),
-              ),
               Text(
-                ' ${userInfoProvider.userInfo!.email}',
-                style: const TextStyle(fontSize: 20),
-              )
+                'E-mail :${userInfoDB.email}',
+                style: const TextStyle(fontSize: 25),
+              ),
             ]),
             const SizedBox(
               height: 30,
