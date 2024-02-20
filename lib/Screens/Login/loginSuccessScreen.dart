@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sc/Controller/Dto/LogIn/FetchUser.dart';
+import 'package:flutter_sc/Controller/Dto/LogIn/UserDto.dart';
 import 'package:flutter_sc/Model/common/color.dart';
 import 'package:go_router/go_router.dart';
 

@@ -62,7 +62,7 @@ class _CreatPostScreenState extends State<CreatPostScreen> {
                                     actions: [
                                       TextButton(
                                           onPressed: () async => {
-                                                db.saveBoardDB(
+                                                await db.saveBoardDB(
                                                     tffTitle.toString(),
                                                     tffPost.toString(),
                                                     dropdownValueLocal),

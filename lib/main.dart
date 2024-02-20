@@ -31,7 +31,7 @@ Future<void> main() async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => UserInfoProvider()),
-      ChangeNotifierProvider(create: (_) => BoardProvider())
+      //  ChangeNotifierProvider(create: (_) => BoardProvider())
     ],
     child: const MyApp(),
   ));
@@ -47,6 +47,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: router,
       title: 'Log In',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true, primaryColor: PRIMARYCOLOR),
     );
   }

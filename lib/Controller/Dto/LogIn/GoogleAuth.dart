@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_sc/Controller/Dto/LogIn/FetchUser.dart';
+import 'package:flutter_sc/Controller/Dto/LogIn/UserDto.dart';
 import 'package:flutter_sc/Model/Data/TokenKey.dart';
 import 'package:flutter_sc/Model/common/client.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -15,7 +15,7 @@ class GoogleAuth {
   // 로그인 성공시 userCredential 반환 -> fetechUser를 반환하는게 맞는듯? 안에 토큰 값 넣어서 !
   Future<dynamic> handleSignIn(BuildContext context) async {
     // 구글 로그인 관리할 클래스 clientId: GOOGLE_CLIENT_ID
-    final GoogleSignIn googleSignIn = GoogleSignIn(clientId: GOOGLE_CLIENT_ID);
+    final GoogleSignIn googleSignIn = GoogleSignIn();//clientId: GOOGLE_CLIENT_ID);
     final UserDto userDto = UserDto();
     //UserInfo userInfo = UserInfo.fromJson(googleSignIn.);
     final SharedPreferences prefs = await SharedPreferences.getInstance();

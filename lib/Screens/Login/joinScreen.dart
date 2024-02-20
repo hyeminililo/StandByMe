@@ -32,15 +32,13 @@ class _JoinScreenState extends State<JoinScreen> {
           autovalidateMode: _autovalidateMode,
           child: Column(
             children: [
-              padding, padding,
+              padding,
+              padding,
               const Text('Stand By Me',
                   style: TextStyle(fontSize: 50, color: MAIN_TEXT_COLOR)),
               const Text('Join',
                   style: TextStyle(fontSize: 40, color: MAIN_TEXT_COLOR)),
               const Padding(padding: EdgeInsets.only(top: 20)),
-              //TextFormField를 별도 파일로 만들어서 하면 어떨지 ...?
-
-              // dropdownButton을 사이즈 조절하고 싶은...
               DropdownButton<String>(
                 focusColor: BODY_TEXT_COLOR,
                 dropdownColor: MAIN_TEXT_COLOR,

@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_sc/Controller/Dto/LogIn/FetchUser.dart';
+import 'package:flutter_sc/Controller/Dto/LogIn/UserDto.dart';
 import 'package:flutter_sc/Model/Data/UserInfo/UserInfoDB.dart';
 import 'package:flutter_sc/Model/Provider/UserInfoProvider.dart';
 import 'package:flutter_sc/Model/common/color.dart';
@@ -43,12 +43,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
             padding,
-            Row(children: [
-              Text(
-                'E-mail :${userInfoDB.email}',
-                style: const TextStyle(fontSize: 25),
-              ),
-            ]),
+            Center(
+              child: Row(children: [
+                Text(
+                  '      - E-mail :${userInfoDB.email}',
+                  style: const TextStyle(fontSize: 25),
+                ),
+              ]),
+            ),
             const SizedBox(
               height: 30,
             ),
