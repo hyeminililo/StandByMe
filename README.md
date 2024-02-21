@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # flutter_sc
 플러터를 이용해 외국인 커뮤니티 프론트 구현 
 
@@ -13,3 +14,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# StandByMe
+>>>>>>> 23486c94ecd84227228464714e6b75fa228d542c
