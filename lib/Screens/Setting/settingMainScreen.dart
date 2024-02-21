@@ -22,8 +22,11 @@ class _SettingMainScreenState extends State<SettingMainScreen> {
         children: [
           Column(
             children: [
-              PrettySlideUnderlineButton(label: 'Profile', onPressed: ()=>context.go('/profile')),
-              PrettySlideUnderlineButton(label: 'Edit My Post', onPressed: ()=>context.go('/editMyPost')),
+              PrettySlideUnderlineButton(
+                  label: 'Profile', onPressed: () => context.go('/profile')),
+              PrettySlideUnderlineButton(
+                  label: 'Edit My Post',
+                  onPressed: () => context.go('/editMyPost')),
               PrettySlideUnderlineButton(label: 'Log Out', onPressed: () {}),
             ],
           )
